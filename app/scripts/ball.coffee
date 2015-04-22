@@ -1,4 +1,4 @@
-class Ball
+class window.Ball
   constructor: (x,y) ->
     [@x, @y, @x_speed, @y_speed, @radius] = [x,y,0,3,5]
 

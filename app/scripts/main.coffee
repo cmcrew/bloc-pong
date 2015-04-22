@@ -1,20 +1,3 @@
-testMe = -> console.log('TEST: \'Allo \'Allo!')
-
-# get correct requestAnimationFrame invocation
-animate = window.requestAnimationFrame or window.webkitRequestAnimationFrame or wondow.mozRequestAnimationFrame or 
-  (callback) -> window.setTimeout callback, 1000/60
-
-# set up canvas and grab its 2d context
-canvas = document.createElement('canvas')
-width = 400
-height = 600
-canvas.width = width
-canvas.height = height
-context = canvas.getContext('2d')
-player = new Player(175, 580, 50, 10)
-computer = new Player(175, 10, 50, 10)
-ball = new Ball(200,300)
-
 ##-------------------------------------------PADDLE--------------------------------------------##
 
 # class Paddle
@@ -70,6 +53,24 @@ ball = new Ball(200,300)
 ##-------------------------------------------MAIN--------------------------------------------##
 
 window.onload = -> 
+  testMe = -> console.log('TEST: \'Allo \'Allo!')
+
+  # get correct requestAnimationFrame invocation
+  window.animate = window.requestAnimationFrame or window.webkitRequestAnimationFrame or wondow.mozRequestAnimationFrame or 
+    (callback) -> window.setTimeout callback, 1000/60
+
+  # set up canvas and grab its 2d context
+  canvas = document.createElement('canvas')
+  document.body.appendChild canvas
+  width = 400
+  height = 600
+  canvas.width = width
+  canvas.height = height
+  window.context = canvas.getContext('2d')
+  window.player = new Player(175, 580, 50, 10)
+  window.computer = new Player(175, 10, 50, 10)
+  window.ball = new Ball(200,300)
+
   testMe() # $(document).ready(fn)
   # document.body.appendChild canvas
   # window.player = new Player(175, 580, 50, 10)
