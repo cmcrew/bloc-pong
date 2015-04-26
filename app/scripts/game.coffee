@@ -7,6 +7,7 @@ window.step = ->
   animate(step)
 
 window.update = ->
+  ball.update()
 
 # Set background and rectangle size
 window.render = ->

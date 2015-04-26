@@ -7,3 +7,7 @@ class window.Ball
     context.arc(@x, @y, @radius, 2*Math.PI, false)
     context.fillStyle = "#000"
     context.fill()
+
+  update: ->
+    @x += @x_speed
+    @y += @y_speed
