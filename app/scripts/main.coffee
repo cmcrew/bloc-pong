@@ -8,6 +8,7 @@ window.onload = ->
   # set up canvas and grab its 2d context
   canvas = document.createElement('canvas')
   document.body.appendChild canvas
+  window.keysDown = {}
   width = 400
   height = 600
   canvas.width = width
@@ -16,6 +17,7 @@ window.onload = ->
   window.player = new Player(175, 580, 50, 10)
   window.computer = new Player(175, 10, 50, 10)
   window.ball = new Ball(200,300)
-
+  window.addEventListener "keydown", (event) ->
+      window.keysDown[event.keyCode] = true
   testMe() 
   animate(step)

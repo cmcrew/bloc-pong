@@ -7,6 +7,7 @@ window.step = ->
   animate(step)
 
 window.update = ->
+  player.update()
   ball.update(player.paddle, computer.paddle)
 
 # Set background and rectangle size
