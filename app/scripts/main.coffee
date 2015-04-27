@@ -18,7 +18,6 @@ window.onload = ->
   window.computer = new Computer(175, 10, 50, 10)
   window.ball = new Ball(200,300)
   window.addEventListener "keydown", (event) ->
-    console.log('Keycode = ' + event.keyCode)
     window.keysDown[event.keyCode] = true
   window.addEventListener "keyup", (event) ->
     delete window.keysDown[event.keyCode]
