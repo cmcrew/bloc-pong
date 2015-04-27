@@ -15,7 +15,7 @@ window.onload = ->
   canvas.height = height
   window.context = canvas.getContext('2d')
   window.player = new Player(175, 580, 50, 10)
-  window.computer = new Player(175, 10, 50, 10)
+  window.computer = new Computer(175, 10, 50, 10)
   window.ball = new Ball(200,300)
   window.addEventListener "keydown", (event) ->
     console.log('Keycode = ' + event.keyCode)
