@@ -7,7 +7,7 @@ class window.Player
     @paddle.render()
 
   update: ->
-    for key in keysDown
+    for key of keysDown
       value = Number(key)
       if value == 37
         @paddle.move -4, 0 #left arrow

@@ -18,6 +18,9 @@ window.onload = ->
   window.computer = new Player(175, 10, 50, 10)
   window.ball = new Ball(200,300)
   window.addEventListener "keydown", (event) ->
-      window.keysDown[event.keyCode] = true
+    console.log('Keycode = ' + event.keyCode)
+    window.keysDown[event.keyCode] = true
+  window.addEventListener "keyup", (event) ->
+    delete window.keysDown[event.keyCode]
   testMe() 
   animate(step)
