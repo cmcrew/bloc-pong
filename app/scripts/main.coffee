@@ -1,6 +1,5 @@
 window.onload = -> 
-  testMe = -> console.log('TEST: \'Allo \'Allo!')
-
+  startButton = document.getElementById('start-button')
   # get correct requestAnimationFrame invocation
   window.animate = window.requestAnimationFrame or window.webkitRequestAnimationFrame or wondow.mozRequestAnimationFrame or 
     (callback) -> window.setTimeout callback, 1000/60
@@ -21,5 +20,6 @@ window.onload = ->
     window.keysDown[event.keyCode] = true
   window.addEventListener "keyup", (event) ->
     delete window.keysDown[event.keyCode]
-  testMe() 
-  animate(step)
+  startButton.addEventListener "click", (event) ->
+    startButton.parentNode.removeChild(startButton)
+    animate(step)
