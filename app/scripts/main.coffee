@@ -1,7 +1,7 @@
 window.onload = -> 
   startButton = document.getElementById('start-button')
   # get correct requestAnimationFrame invocation
-  window.animate = window.requestAnimationFrame or window.webkitRequestAnimationFrame or wondow.mozRequestAnimationFrame or 
+  window.animate = window.requestAnimationFrame or window.webkitRequestAnimationFrame or window.mozRequestAnimationFrame or 
     (callback) -> window.setTimeout callback, 1000/60
 
   # set up canvas and grab its 2d context
