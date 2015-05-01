@@ -16,7 +16,16 @@ class window.Ball
     if @x - 5 < 0 then [@x, @x_speed] = [5, -@x_speed] #hitting left wall
     else if @x+5 > 400 then [@x, @x_speed] = [395, -@x_speed] #hitting right wall
 
-    if @y < 0 || @y > 600 then [@x, @y, @x_speed, @y_speed] = [200,300,0,3] #a point was scored
+    if @y < 0 
+      #a point was scored by player
+      [@x, @y, @x_speed, @y_speed] = [200,300,0,3]
+      player.score += 1
+      console.log("Player score is: " + player.score)
+    else if @y > 600
+     #a point was scored by computer
+     [@x, @y, @x_speed, @y_speed] = [200,300,0,3]
+     computer.score += 1
+     console.log("Computer score is: " + computer.score)
 
     if top_y > 300
       if top_y < (paddle1.y + paddle1.height) and bottom_y > paddle1.y and top_x < (paddle1.x + paddle1.width) and bottom_x > paddle1.x
