@@ -4,7 +4,9 @@
 window.step = ->
   update()
   render()
-  animate(step)
+  if computer.score is 21 then alert "Game Over - Computer Won!"
+  if player.score is 21 then alert "Game Over - You Won!"
+  animate(step) unless computer.score is 21 or player.score is 21
 
 window.update = ->
   player.update()
@@ -13,7 +15,7 @@ window.update = ->
 
 # Set background and rectangle size
 window.render = ->
-  context.fillStyle = "#FF00FF"
+  context.fillStyle = "#0074D9"
   context.fillRect 0,0,400,600
   player.render()
   computer.render()

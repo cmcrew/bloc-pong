@@ -3,7 +3,7 @@ class window.Paddle
     [@x, @y, @width, @height, @x_speed, @y_speed] = [x, y, width, height, 0, 0]
 
   render: ->
-    context.fillStyle = "#0000ff"
+    context.fillStyle = "#001f3f"
     context.fillRect @x, @y, @width, @height
 
   move: (x,y) ->

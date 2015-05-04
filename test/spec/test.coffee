@@ -7,3 +7,7 @@
         expect(paddle.x).to.equal(5)
         expect(paddle.y).to.equal(5)
 )()
+
+# grunt config - make grunt serve not have to run simultaneously
+# run grunt test - see results in terminal
+# make sure the test target runs the coffee target

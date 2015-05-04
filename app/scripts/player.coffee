@@ -5,6 +5,9 @@ class window.Player
 
   render: ->
     @paddle.render()
+    context.font = "16px Avenir"
+    context.fillStyle = "#fff"
+    context.fillText("Player: " + @score, 10, 590)
 
   update: ->
     for key of keysDown

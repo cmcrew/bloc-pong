@@ -5,7 +5,7 @@ class window.Ball
   render: ->
     context.beginPath()
     context.arc(@x, @y, @radius, 2*Math.PI, false)
-    context.fillStyle = "#000"
+    context.fillStyle = "#fff"
     context.fill()
 
   update: (paddle1, paddle2) ->
