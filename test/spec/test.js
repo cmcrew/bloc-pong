@@ -3,10 +3,13 @@
 (function () {
   'use strict';
 
-  describe('Give it some context', function () {
-    describe('maybe a bit more context here', function () {
-      it('should run here few assertions', function () {
-
+  describe('Paddle', function () {
+    describe('#move', function () {
+      it('moves right when x speed is positive', function () {
+        var paddle = new Paddle(0,0,10,10);
+        paddle.move(5,5);
+        expect(paddle.x).to.equal(5);
+        expect(paddle.y).to.equal(5);
       });
     });
   });
