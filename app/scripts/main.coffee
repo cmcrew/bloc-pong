@@ -21,5 +21,4 @@ window.onload = ->
   window.addEventListener "keyup", (event) ->
     delete window.keysDown[event.keyCode]
   startButton.addEventListener "click", (event) ->
-    startButton.parentNode.removeChild(startButton)
     animate(step)

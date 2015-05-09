@@ -4,9 +4,15 @@
 window.step = ->
   update()
   render()
-  if computer.score is 21 then alert "Game Over - Computer Won!"
-  if player.score is 21 then alert "Game Over - You Won!"
-  animate(step) unless computer.score is 21 or player.score is 21
+  if computer.score is 21 
+    alert "Game Over - Computer Won!"
+    player.score = 0
+    computer.score = 0
+  if player.score is 21 
+    alert "Game Over - You Won!"
+    player.score = 0
+    computer.score = 0
+  animate(step) unless computer.score is 21 or player.score is 21 #play unless someone
 
 window.update = ->
   player.update()
