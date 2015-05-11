@@ -1,20 +1,20 @@
-class window.Player
+class PONG.Player
   constructor: (x,y,width,height) ->
-    @paddle = new Paddle(x,y,width,height,0,0)
+    @paddle = new PONG.Paddle(x,y,width,height,0)
     @score = 0
 
   render: ->
     @paddle.render()
-    context.font = "16px Avenir"
-    context.fillStyle = "#fff"
-    context.fillText("Player: " + @score, 10, 590)
+    PONG.context.font = "16px Avenir"
+    PONG.context.fillStyle = "#fff"
+    PONG.context.fillText("Player: " + @score, 10, 590)
 
   update: ->
-    for key of keysDown
+    for key of PONG.keysDown
       value = Number(key)
-      if value == 37
-        @paddle.move -4, 0 #left arrow
-      else if value == 39
-        @paddle.move 4, 0 #right arrow
+      if value == 37 #left arrow
+        @paddle.move -4
+      else if value == 39 #right arrow
+        @paddle.move 4
       else
-        @paddle.move 0,0
+        @paddle.move 0

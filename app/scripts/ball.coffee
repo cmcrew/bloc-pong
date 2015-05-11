@@ -1,12 +1,12 @@
-class window.Ball
+class PONG.Ball
   constructor: (x,y) ->
     [@x, @y, @x_speed, @y_speed, @radius] = [x,y,0,3,5]
 
   render: ->
-    context.beginPath()
-    context.arc(@x, @y, @radius, 2*Math.PI, false)
-    context.fillStyle = "#fff"
-    context.fill()
+    PONG.context.beginPath()
+    PONG.context.arc(@x, @y, @radius, 2*Math.PI, false)
+    PONG.context.fillStyle = "#fff"
+    PONG.context.fill()
 
   update: (paddle1, paddle2) ->
     @x += @x_speed
@@ -19,11 +19,11 @@ class window.Ball
     if @y < 0 
       #a point was scored by player
       [@x, @y, @x_speed, @y_speed] = [200,300,0,3]
-      player.score += 1
+      PONG.player.score += 1
     else if @y > 600
      #a point was scored by computer
      [@x, @y, @x_speed, @y_speed] = [200,300,0,3]
-     computer.score += 1
+     PONG.computer.score += 1
 
     if top_y > 300
       if top_y < (paddle1.y + paddle1.height) and bottom_y > paddle1.y and top_x < (paddle1.x + paddle1.width) and bottom_x > paddle1.x

@@ -1,9 +1,9 @@
-class window.Computer extends Player
+class PONG.Computer extends PONG.Player
   render: ->
     @paddle.render()
-    context.font = "16px Avenir"
-    context.fillStyle = "#fff"
-    context.fillText('Computer: ' + @score, 10, 20)
+    PONG.context.font = "16px Avenir"
+    PONG.context.fillStyle = "#fff"
+    PONG.context.fillText('Computer: ' + @score, 10, 20)
 
   update: (ball) ->
     x_pos = ball.x

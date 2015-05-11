@@ -1,16 +1,14 @@
-class window.Paddle
+class PONG.Paddle
   constructor: (x,y,width,height) ->
-    [@x, @y, @width, @height, @x_speed, @y_speed] = [x, y, width, height, 0, 0]
+    [@x, @y, @width, @height, @x_speed] = [x, y, width, height, 0]
 
   render: ->
-    context.fillStyle = "#001f3f"
-    context.fillRect @x, @y, @width, @height
+    PONG.context.fillStyle = "#001f3f"
+    PONG.context.fillRect @x, @y, @width, @height
 
-  move: (x,y) ->
+  move: (x) ->
     @x += x
-    @y += y
     @x_speed = x
-    @y_speed = y
     if @x < 0 #all the way left
       @x = 0
       @x_speed = 0
